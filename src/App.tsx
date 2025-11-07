@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AppLayout from './components/AppLayout'
 import CreateProductPage from './pages/CreateProductPage'
 import EditProductPage from './pages/EditProductPage'
@@ -6,7 +6,7 @@ import ProductDetailPage from './pages/ProductDetailPage'
 import ProductsPage from './pages/ProductsPage'
 
 const App = () => (
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Navigate to="/products" replace />} />
@@ -17,7 +17,7 @@ const App = () => (
         <Route path="*" element={<Navigate to="/products" replace />} />
       </Route>
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
 )
 
 export default App
